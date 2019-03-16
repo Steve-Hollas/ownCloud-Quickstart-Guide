@@ -126,13 +126,13 @@ When the process completes, check that all the containers have successfully
 started by running docker-compose ps. If they are all working correctly, you
 should expect to see output similar to that below:
 
-Name Command State Ports
-
-server_db_1 /usr/bin/entrypoint/bin/s … Up 3306/tcp
-
-server_owncloud_1 /usr/local/bin/entrypoint … Up 0.0.0.0:8080-\>8080/tcp
-
-server_redis_1 /bin/s6-svscan /etc/s6 Up 6379/tcp
+| **Name**          | **Command**                   | **State** | **Ports**               |
+|-------------------|-------------------------------|-----------|-------------------------|
+| server_db_1       | /usr/bin/entrypoint/bin/s …   | Up        | 3306/tcp                |
+| server_owncloud_1 | /usr/local/bin/entrypoint …   | Up        | 0.0.0.0:8080-\>8080/tcp |
+| server_redis_1    | /bin/s6-svscan /etc/s6        | Up        | 6379/tcp                |
+| ADMIN_PASSWORD   | The admin user’s password | admin       |
+| HTTP_PORT        | The HTTP port to bind to  | 8080        |
 
 In it, you can see that the database, ownCloud, and Redis containers are
 running, and that ownCloud is accessible via port 8080 on the host machine.
